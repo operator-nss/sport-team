@@ -1,0 +1,114 @@
+// Заголовки, общие БЄМ блоки и проче...
+.no-hover {
+   pointer-events:none;
+}
+
+
+.title {
+   font-family: Magistral;
+   font-style: normal;
+   font-weight: bold;
+   @include adaptiveValue("font-size", 63, 20);
+   line-height: 120%;
+   letter-spacing: 0.04em;
+   text-transform: uppercase;
+
+   // .title__black
+
+   &__black {
+      color: #2b2b2b;
+   }
+}
+
+.category {
+   font-weight: 500;
+   font-size: rem(15);
+   line-height: 140%;
+   display: inline-block;
+   transition: all 0.3s ease 0s;
+   padding: rem(8) rem(12);
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: rem(100);
+   @media (any-hover: hover) {
+     &:hover {
+      background: #FFFFFF;
+      color: #1AB8EC;
+    }
+   }
+}
+//========================================================================================================================================================
+
+.title-card {
+   font-weight: bold;
+   font-size: rem(20);
+   line-height: 140%;
+   color: #2b2b2b;
+   &::after {
+      content: "";
+      display: block;
+      margin: rem(8) rem(0) rem(16) rem(0);
+      height: 2px;
+      width: 56px;
+      background-color: #02489f;
+   }
+}
+
+
+.card__content {
+   padding: rem(24);
+
+}
+
+.card__text {
+   line-height: 140%;
+   color: #2b2b2b;
+   &:not(:last-child) {
+      margin-bottom: rem(32);
+   }
+}
+
+.card__link {
+   font-weight: 500;
+   line-height: 140%;
+   transition: color 0.3s ease 0s;
+
+   text-decoration-line: underline!important;
+   color: #02489f;
+   @media (any-hover: hover) {
+     &:hover {
+      color: rgba(2, 72, 159, 0.7);
+    }
+   }
+}
+
+.card__categories {
+   display: block;
+   padding: rem(24);
+
+}
+
+
+.card-categorie {
+   font-weight: 500;
+   line-height: 140%;
+   color: rgba(2, 72, 159, 0.3);
+   display: inline-block;
+   &:not(:last-child) {margin-right: rem(16);}
+
+   // .card-categorie__blue
+
+   &__blue {
+      color: #02489F;
+      padding: rem(8) rem(12);
+      background: rgba(2, 72, 159, 0.2);
+      border-radius: 100px;
+      transition: all 0.3s ease 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+        color: #fff;
+        background: #02489F;
+       }
+      }
+   }
+}
