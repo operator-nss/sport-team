@@ -1675,6 +1675,63 @@
 
 .slide-partnership {
    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+   height: 100%;
+   position: relative;
+
+   // .lide-partnership__label
+
+   &__label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      transition: all 0.3s ease 0s;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      span {
+         color: #fff;
+         padding: rem(40) rem(0);
+         display: flex;
+         text-transform: uppercase;
+         align-items: center;
+         &::after {
+            @extend %ic;
+            content: "\e983";
+            padding: rem(0) rem(0) rem(0) rem(16);
+            font-size: rem(12);
+         }
+      }
+      background: linear-gradient(
+         0deg,
+         rgba(2, 72, 159, 0.7) 0%,
+         rgba(2, 72, 159, 0.6) 0.01%,
+         rgba(2, 72, 159, 0.4) 100%
+      );
+      background: -moz-linear-gradient(
+         0deg,
+         rgba(2, 72, 159, 0.7) 0%,
+         rgba(2, 72, 159, 0.6) 0.01%,
+         rgba(2, 72, 159, 0.4) 100%
+      );
+      background: -webkit-linear-gradient(
+         0deg,
+         rgba(2, 72, 159, 0.7) 0%,
+         rgba(2, 72, 159, 0.6) 0.01%,
+         rgba(2, 72, 159, 0.4) 100%
+      );
+      @media (any-hover: hover) {
+         &:hover {
+            opacity: 1;
+         }
+      }
+   }
+
    // .slide-partnership__image-ibg
 
    &__image-ibg {
@@ -1688,8 +1745,8 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      @media (max-width:$mobileSmall){
-          padding: 5px;
+      @media (max-width: $mobileSmall) {
+         padding: 5px;
       }
    }
 
