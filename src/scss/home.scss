@@ -2,6 +2,7 @@
 
 .mainslider {
    overflow: hidden;
+   // margin: rem(120) rem(0) rem(0) rem(0);
    // max-height: rem(680);
    position: relative;
    background: linear-gradient(99.31deg, #02489f -26.39%, #1ab8ec 114.97%);
@@ -68,7 +69,7 @@
 
    &__content {
       @include adaptiveValue("max-width", 850, 220);
-      mah-height: 500px;
+      mah-height: rem(500);
       @media (max-width: $mobile) {
          width: 100%;
          display: flex;
@@ -105,6 +106,9 @@
    // .mainslider__button
 
    &__button {
+      @media (max-width:$mobileSmall){
+
+      }
    }
 
    // .mainslider__arrow-big
@@ -157,8 +161,8 @@
 
    &__arrow-star {
       position: absolute;
-      right: -1100px;
-      bottom: -1100px;
+      right: rem(-1100);
+      bottom: rem(-1100);
       z-index: 0;
       transform: rotate(-170deg);
       max-width: rem(500);
@@ -209,7 +213,7 @@
       @media (max-width: $mobile) {
          top: 58%;
          left: 45%;
-         height: 100px;
+         height: rem(100);
          display: inline-flex;
          align-items: end;
       }
@@ -240,7 +244,7 @@
          flex-direction: column;
          align-items: end;
          position: absolute;
-         left: -100px;
+         left: rem(-100);
          top: 30%;
          display: flex;
       }
@@ -250,8 +254,8 @@
 // ====================================================================================================
 
 .quantity {
-   @include adaptiveValue("padding-top", 104, 60, 768, 320, 1);
-   @include adaptiveValue("padding-bottom", 104, 60, 768, 320, 1);
+   @include adaptiveValue("padding-top", 104, 30, 768, 320, 1);
+   @include adaptiveValue("padding-bottom", 104, 30, 768, 320, 1);
    // .quantity__items
 
    &__items {
@@ -342,7 +346,7 @@
          flex: 0 0 rem(176);
       }
       @media (max-width: $mobile) {
-         margin-bottom: 30px;
+         margin-bottom: rem(30);
       }
       @media (max-width: $mobileSmall) {
          flex: 1 1 100%;
@@ -446,7 +450,7 @@
          justify-content: start;
          text-align: left;
          span {
-            max-width: 120px;
+            max-width: rem(120);
          }
       }
    }
@@ -455,8 +459,8 @@
 //========================================================================================================================================================
 
 .sport-objects {
-   @include adaptiveValue("padding-top", 104, 72, 768, 320, 1);
-   @include adaptiveValue("padding-bottom", 104, 72, 768, 320, 1);
+   @include adaptiveValue("padding-top", 62, 36, 768, 320, 1);
+   @include adaptiveValue("padding-bottom", 62, 36, 768, 320, 1);
    // .sport-objects__container
 
    &__container {
@@ -544,10 +548,7 @@
    // .sport-objects__button
 
    &__button {
-      @media (max-width: $mobileSmall) {
-         display: flex;
-         width: 100%;
-      }
+      text-align: center;
    }
 }
 
@@ -705,11 +706,11 @@
          content: "";
          display: block;
          background: url("@img/news/star.svg") left no-repeat;
-         width: 1100px;
+         width: rem(1100);
          height: 100%;
          position: absolute;
-         right: 24px;
-         top: -24px;
+         right: rem(24);
+         top: rem(-24);
       }
    }
 
@@ -783,8 +784,8 @@
 //========================================================================================================================================================
 
 .projects {
-   @include adaptiveValue("padding-top", 104, 72, 768, 320, 1);
-   @include adaptiveValue("padding-bottom", 104, 72, 768, 320, 1);
+   @include adaptiveValue("padding-top", 62, 36, 768, 320, 1);
+   @include adaptiveValue("padding-bottom", 62, 36, 768, 320, 1);
    // .projects__container
 
    &__container {
@@ -863,7 +864,7 @@
    @media (max-width: 1490px) {
       flex-direction: column;
    }
-   @media (max-width: 992px) {
+   @media (max-width: em(991.98)) {
       flex-direction: row;
       justify-content: space-between;
    }
@@ -943,7 +944,7 @@
       flex-direction: column;
       justify-content: start;
    }
-   @media (max-width: 992px) {
+   @media (max-width: em(991.98)) {
       flex-direction: row;
       // flex-direction: column;
       justify-content: space-between;
@@ -959,9 +960,9 @@
       background: #ffffff;
       box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
       @media (max-width: em(1490)) {
-         height: 380px;
+         height: rem(380);
          margin: rem(0) rem(0) rem(56) rem(0);
-         width: 300px;
+         width: rem(300);
       }
       @media (max-width: em(768)) {
          width: rem(348);
@@ -1086,8 +1087,8 @@
 //========================================================================================================================================================
 
 .calendar {
-   @include adaptiveValue("padding-top", 104, 60, 768, 320, 1);
-   @include adaptiveValue("padding-bottom", 104, 60, 768, 320, 1);
+   @include adaptiveValue("padding-top", 62, 30, 768, 320, 1);
+   @include adaptiveValue("padding-bottom", 62, 30, 768, 320, 1);
    text-align: center;
    position: relative;
 
@@ -1142,11 +1143,11 @@
    // .calendar__arrow-circle
 
    &__arrow-circle {
-      width: 500px;
-      height: 500px;
+      width: rem(500);
+      height: rem(500);
       position: absolute;
       right: -8%;
-      top: 320px;
+      top: rem(320);
       z-index: -1;
       transform: rotate(-90deg);
       img {
@@ -1169,7 +1170,7 @@
          &::before {
             transform: rotate(-270deg);
             position: relative;
-            top: -10px;
+            top: rem(-10);
             font-size: rem(13);
          }
       }
@@ -1177,7 +1178,7 @@
          &:hover {
             span {
                &::before {
-                  top: -2px;
+                  top: rem(-2);
                   transform: rotate(-270deg) translate(0px, 0px);
                }
             }
@@ -1188,8 +1189,8 @@
 //========================================================================================================================================================
 
 .media {
-   @include adaptiveValue("padding-top", 104, 60, 768, 320, 1);
-   @include adaptiveValue("padding-bottom", 104, 60, 768, 320, 1);
+   @include adaptiveValue("padding-top", 62, 30, 768, 320, 1);
+   @include adaptiveValue("padding-bottom", 62, 30, 768, 320, 1);
    color: #2b2b2b;
    // .media__container
 
@@ -1514,16 +1515,16 @@
          width: 100%;
          display: block;
          height: 80%;
-         top: -30px;
-         right: -20px;
+         top: rem(-30);
+         right: rem(-20);
       }
    }
    @media (max-width: $mobile) {
       padding: rem(0) rem(10);
       &:last-child {
          &::before {
-            top: -30px;
-            right: -20px;
+            top: rem(-30);
+            right: rem(-20);
          }
       }
    }
@@ -1750,7 +1751,7 @@
       bottom: 0;
       left: 0;
       @media (max-width: $mobileSmall) {
-         padding: 5px;
+         padding: rem(5);
       }
    }
 

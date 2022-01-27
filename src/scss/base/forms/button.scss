@@ -8,7 +8,7 @@
    font-size: rem(16);
    line-height: math.div(19, 16);
    display: inline-flex;
-   width: 280px;
+   max-width: 280px;
 
    padding: rem(27) rem(84);
    border: 2px solid #ffffff;
@@ -25,6 +25,9 @@
          transition: all 0.3s ease 0s;
 
       }
+   }
+   @media (max-width:$mobileSmall){
+      padding: rem(27) rem(60);
    }
 
    @media (any-hover: hover) {
