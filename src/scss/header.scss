@@ -64,8 +64,8 @@
    }
    .menu-open & {
       span {
-         width: 0!important;
-         pointer-events: none!important;
+         width: 0 !important;
+         pointer-events: none !important;
       }
       &::before,
       &::after {
@@ -93,7 +93,6 @@
    // background-color: #fff;
    // width: 100%;
 
-
    &._header-scroll {
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       position: fixed;
@@ -108,7 +107,6 @@
       .lock & {
          padding-right: rem(17);
       }
-
    }
 
    &._header-show {
@@ -128,6 +126,7 @@
       padding: rem(16) rem(0);
       ._header-scroll & {
          padding: 0;
+         max-height: rem(75);
       }
    }
 
@@ -159,20 +158,24 @@
 
    &__logo {
       min-width: rem(55);
+      padding: 2px;
+      -webkit-animation: rotate-vert-center 10s ease 5s infinite both;
+      animation: rotate-vert-center 10s ease 5s infinite both;
       min-height: rem(55);
       display: inline-block;
-      position: relative;
-      padding: rem(0) rem(24) rem(0) rem(0);
-      &::after {
-         content: "";
-         display: inline-block;
-         background-color: #02489f;
-         width: 2px;
-         height: 80%;
-         position: absolute;
-         right: 0;
-         top: 10%;
-      }
+      margin: rem(0) rem(0) rem(0) rem(0);
+      // position: relative;
+      // padding: rem(0) rem(24) rem(0) rem(0);
+      // &::after {
+      //    content: "";
+      //    display: inline-block;
+      //    background-color: #02489f;
+      //    width: 2px;
+      //    height: 80%;
+      //    position: absolute;
+      //    right: 0;
+      //    top: 10%;
+      // }
       ._header-scroll & {
          max-height: rem(75);
          max-width: rem(75);
@@ -183,15 +186,57 @@
       }
    }
 
+   @-webkit-keyframes rotate-vert-center {
+      0% {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+      }
+      20% {
+         -webkit-transform: rotateY(360deg);
+                 transform: rotateY(360deg);
+       }
+      100% {
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+      }
+    }
+    @keyframes rotate-vert-center {
+      0% {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+      }
+      20% {
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+      }
+      100% {
+         -webkit-transform: rotateY(360deg);
+                 transform: rotateY(360deg);
+       }
+    }
+
+
+
    // .header__sublogo
 
    &__sublogo {
+      position: relative;
       &::before {
          background-image: linear-gradient(180deg, #1ab8ec 0%, #02489f 100%); /* Standard syntax; must be last */
          color: transparent;
          -webkit-background-clip: text;
          background-clip: text;
          font-size: rem(72);
+      }
+      &::after {
+         content: "";
+         display: inline-block;
+         background-color: #02489f;
+         width: 2px;
+         height: 100%;
+         position: absolute;
+         left: rem(-13);
+         top: 0%;
       }
       @media (max-width: $mobile) {
          margin: 0;
