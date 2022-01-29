@@ -69,7 +69,7 @@
 
    &__content {
       @include adaptiveValue("max-width", 850, 220);
-      mah-height: rem(500);
+      max-height: rem(500);
       @media (max-width: $mobile) {
          width: 100%;
          display: flex;
